@@ -26,5 +26,17 @@ public class Application {
             System.out.println("==== The file : " + fileName + " ====");
             System.out.println("==== does not exist in path : " + dirPath + " ====");
         }
+
+        dirPath = "C:\\Users\\client\\gestion";
+        String dirName = "test";
+        state = fileManagementSystem.isDirectoryExist(dirPath, dirName);
+        if (state) {
+            System.out.println("==== The directory : " + dirName + " ====");
+            System.out.println("==== exist in path : " + dirPath + " ====");
+        }
+        else {
+            System.out.println("==== The directory : " + dirName + " ====");
+            System.out.println("==== does not exist in path : " + dirPath + " ====");
+        }
     }
 }

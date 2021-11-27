@@ -31,4 +31,11 @@ public class FileManagementSystem {
         return file.exists();
     }
 
+    public boolean isDirectoryExist(String dirPath, String dirName) {
+        String separator = System.getProperty("file.separator");
+        String path = dirPath + separator + dirName;
+        this.file = new File(path);
+        return file.isDirectory();
+    }
+
 }
