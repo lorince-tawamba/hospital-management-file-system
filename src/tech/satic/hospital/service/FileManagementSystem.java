@@ -24,6 +24,13 @@ public class FileManagementSystem {
         this.dir = "gestion";
     }
 
+    public boolean isDirectoryExist(String dirPath, String dirName) {
+        String separator = System.getProperty("file.separator");
+        String path = dirPath + separator + dirName;
+        this.file = new File(path);
+        return file.isDirectory();
+    }
+
     public boolean isFileExist(String dirPath, String fileName) {
         String separator = System.getProperty("file.separator");
         String path = dirPath + separator + fileName;
@@ -31,11 +38,15 @@ public class FileManagementSystem {
         return file.exists();
     }
 
-    public boolean isDirectoryExist(String dirPath, String dirName) {
+    public boolean createDirectoryIfNotExist(String dirPath, String dirName) {
         String separator = System.getProperty("file.separator");
         String path = dirPath + separator + dirName;
         this.file = new File(path);
-        return file.isDirectory();
+        if (!file.exists()) {
+            return file.mkdir();
+        }
+        return false;
     }
+
 
 }

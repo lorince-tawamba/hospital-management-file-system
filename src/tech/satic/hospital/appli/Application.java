@@ -38,5 +38,21 @@ public class Application {
             System.out.println("==== The directory : " + dirName + " ====");
             System.out.println("==== does not exist in path : " + dirPath + " ====");
         }
+
+        dirPath = "C:\\Users\\client";
+        dirName = "gestion";
+        state = fileManagementSystem.createDirectoryIfNotExist(dirPath, dirName);
+        String separator = System.getProperty("file.separator");
+        String path;
+        if (state) {
+            System.out.println("==== The directory : " + dirName + " ====");
+            System.out.println("==== create in path : " + dirPath + " ====");
+            path = dirPath + separator + dirName;
+            System.out.println("==== The full path is : " + path + " ====");
+        }
+        else {
+            System.out.println("==== The directory : " + dirName + " ====");
+            System.out.println("==== does not create in path : " + dirPath + " ====");
+        }
     }
 }
